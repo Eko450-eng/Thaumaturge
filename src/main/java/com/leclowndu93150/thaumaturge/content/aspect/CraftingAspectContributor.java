@@ -47,7 +47,7 @@ public final class CraftingAspectContributor implements IAspectRecipeContributor
         int skipped = 0;
         for (RecipeHolder<?> holder : recipes.getRecipes()) {
             ItemStack output = outputOf(holder.value());
-            if (output.isEmpty()) {
+            if (output == null || output.isEmpty()) {
                 continue;
             }
             try {
